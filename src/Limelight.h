@@ -1018,6 +1018,10 @@ void LiRequestIdrFrame(void);
 #define LI_FF_CONTROLLER_TOUCH_EVENTS 0x02 // LiSendControllerTouchEvent() supported
 uint32_t LiGetHostFeatureFlags(void);
 
+// Sends a Sunshine extension packet over the encrypted Gen 5+ control stream.
+// Only valid between LiStartConnection() and LiStopConnection().
+int LiSendRawControlStreamPacket(uint16_t packetType, const void* data, int length);
+
 #ifdef __cplusplus
 }
 #endif
